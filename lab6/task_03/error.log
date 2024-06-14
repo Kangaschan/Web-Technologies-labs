@@ -1,0 +1,5 @@
+[26-Mar-2024 17:41:24 Europe/Minsk] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'old-butt-gold'@'localhost' (using password: YES) in D:\2course\4 semestr\vt\WebData\WebData\Lab_6\task_03\login.php:10
+Stack trace:
+#0 D:\2course\4 semestr\vt\WebData\WebData\Lab_6\task_03\login.php(10): mysqli->__construct('localhost', 'old-butt-gold', Object(SensitiveParameterValue), 'php_webtech')
+#1 {main}
+  thrown in D:\2course\4 semestr\vt\WebData\WebData\Lab_6\task_03\login.php on line 10
