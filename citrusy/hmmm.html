@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Меню</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
+        nav li {
+            float: left;
+        }
+        nav li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        nav li a:hover {
+            background-color: #111;
+        }
+        .active {
+            background-color: #4CAF50;
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <ul>
+        <li><a href="?page=about" <?php if(isset($_GET['page']) && $_GET['page'] == 'about') echo 'class="active"'; ?>>О компании</a></li>
+        <li><a href="?page=services" <?php if(isset($_GET['page']) && $_GET['page'] == 'services') echo 'class="active"'; ?>>Услуги</a></li>
+        <li><a href="?page=price" <?php if(isset($_GET['page']) && $_GET['page'] == 'price') echo 'class="active"'; ?>>Прайс</a></li>
+        <li><a href="?page=contacts" <?php if(isset($_GET['page']) && $_GET['page'] == 'contacts') echo 'class="active"'; ?>>Контакты</a></li>
+    </ul>
+</nav>
+
+<div style="padding:20px;">
+    <?php
+        if(isset($_GET['page'])) {
+            $page = $_GET['page'];
+            // Включите соответствующий HTML-код для каждой страницы
+            switch($page) {
+                case 'about':
+                    echo "<h2>О компании</h2>";
+    echo "<p>Здесь информация о компании.</p>";
+    break;
+    case 'services':
+    echo "<h2>Услуги</h2>";
+    echo "<p>Здесь список предоставляемых услуг.</p>";
+    break;
+    case 'price':
+    echo "<h2>Прайс</h2>";
+    echo "<p>Здесь информация о ценах.</p>";
+    break;
+    case 'contacts':
+    echo "<h2>Контакты</h2>";
+    echo "<p>Здесь контактная информация.</p>";
+    break;
+    default:
+    echo "<h2>404 - Страница не найдена</h2>";
+    echo "<p>Извините, запрашиваемая страница не найдена.</p>";
+    break;
+    }
+    }
+    ?>
+</div>
+
+</body>
+</html>
